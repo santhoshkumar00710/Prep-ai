@@ -4,7 +4,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 const PROTECTED_PATHS = ['/dashboard', '/interview', '/results'];
 const AUTH_PATHS = ['/auth'];
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   let response = NextResponse.next({ request });
